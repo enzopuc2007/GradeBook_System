@@ -40,4 +40,12 @@ public class Aluno {
         setNome(nome);
         setRa(ra);
     }
+
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "nome='" + nome + '\'' +
+                ", ra='" + ra + '\'' +
+                '}';
+    }
 }
