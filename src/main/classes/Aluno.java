@@ -6,7 +6,7 @@ public class Aluno {
 
     private String nome;
     private String ra;
-    private ArrayList<Float> notas = new ArrayList<>();
+    private ArrayList<Double> notas = new ArrayList<>();
 
     public String getNome() {
         return nome;
@@ -24,17 +24,19 @@ public class Aluno {
         ra = r;
     }
 
-    public float getNota(int i) {
-        return notas.get(i);
+    public double getNota(int i) {
+        return notas.stream().count();
     }
 
-    public void addNota(float n) {
+    public void addNota(double n) {
         notas.add(n);
     }
 
     public void removeNota(int i) {
         notas.remove(i);
     }
+
+    public Aluno() {}
 
     public Aluno(String nome, String ra) {
         setNome(nome);
