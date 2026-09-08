@@ -47,6 +47,8 @@ public class Program{
                 case 3:
                     break;
                 case 4:
+                    System.out.printf("\n\n");
+                    System.out.printf("Finalização do programa!");
                     System.exit(0);
                     break;
             }
