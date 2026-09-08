@@ -6,48 +6,26 @@ public class Aluno {
 
     private String nome;
     private String ra;
-    private ArrayList<Double> notas = new ArrayList<>();
+
+    private int[] notas;
+
+    public Aluno(int quantidadeNotas) {
+        this.notas = new int[quantidadeNotas];
+    }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String n) {
-        nome = n;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getRa() {
         return ra;
     }
 
-    public void setRa(String r) {
-        ra = r;
-    }
-
-    public double getNota(int i) {
-        return notas.stream().count();
-    }
-
-    public void addNota(double n) {
-        notas.add(n);
-    }
-
-    public void removeNota(int i) {
-        notas.remove(i);
-    }
-
-    public Aluno() {}
-
-    public Aluno(String nome, String ra) {
-        setNome(nome);
-        setRa(ra);
-    }
-
-    @Override
-    public String toString() {
-        return "Aluno{" +
-                "nome='" + nome + '\'' +
-                ", ra='" + ra + '\'' +
-                '}';
+    public void setRa(String ra) {
+        this.ra = ra;
     }
 }

@@ -5,52 +5,45 @@ import main.classes.*;
 
 public class Program{
 
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+    public static void clearScreen() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println("\n");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
         Diario diario = new Diario();
-
-        boolean cont = true;
-        while(cont == true){
-            System.out.printf("Digite a opção a ser escolhida: \n1 - Cadastrar aluno e nota \n2 - Calcular as médias \n3 - Gerar relatório \n4 - Sair\n\nFaça a sua escolha: ");
-            int esc = sc.nextInt();
-
-            switch (esc){
+        Integer opcao;
+        System.out.println("Digite o nome da disciplina: ");
+        diario.setMateria(teclado.nextLine());
+//        System.out.println(diario.getMateria());
+        while (true) {
+            System.out.println("Digite uma das opções a seguir:\n1 - Adicionar aluno\n2 - Calcular média\n3 - Gerar relatório\n4 - Sair\nSua entrada: ");
+            opcao = teclado.nextInt();
+            switch (opcao) {
                 case 1:
-                    while(true) {
-                        System.out.printf("\n\n");
-                        System.out.printf("Digite o nome do aluno: ");
-                        String nome = sc.next();
-                        System.out.printf("\n\nDigite o RA do aluno: ");
-                        String ra = sc.next();
-                        System.out.printf("\n\nDigite a nota do aluno: ");
-                        double nota = sc.nextDouble();
+                    clearScreen();
+                    System.out.println("1 - Adicionar aluno\nAntes de adicionar o aluno declare quantas notas deseja cadastrar para esse aluno.\n");
+                    int quantidadeNotas = teclado.nextInt();
+                    Aluno aluno = new Aluno(quantidadeNotas);
+                    System.out.println("Digite o nome do aluno: ");
+                    aluno.setNome(teclado.nextLine());
+                    System.out.println("Digite o nome do aluno: ");
+                    aluno.setNome(teclado.nextLine());
+                    System.out.println("Digite o RA do aluno: ");
+                    aluno.setRa(teclado.nextLine());
 
-                        diario.setAlunos(nome, ra, nota);
 
-                        System.out.printf("Deseja adicionar algum outro aluno?(S ou N)");
-                        String adiciona = sc.next();
-                        if(adiciona.equals("N")){
-                            false;
-                        }
-                    }
                     break;
                 case 2:
-                    System.out.printf("\n\n");
-                    System.out.printf("Deseja a média de algum aluno em especifico?(S ou N)");
-                    String ad = sc.next();
-                    if(ad.equals("S")){
-                        System.out.printf("Digite o nome do aluno: ");
-                        String nome = sc.next();
-
-                    }
                     break;
                 case 3:
                     break;
                 case 4:
-                    System.exit(0);
+                    System.exit(1);
                     break;
             }
         }
-
     }
 }
