@@ -14,11 +14,12 @@ public class Program{
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Diario diario = new Diario();
+        boolean ver = true;
         Integer opcao;
         System.out.println("Digite o nome da disciplina: ");
         diario.setMateria(teclado.nextLine());
 //        System.out.println(diario.getMateria());
-        while (true) {
+        while (ver == true) {
             System.out.println("Digite uma das opções a seguir:\n1 - Adicionar aluno\n2 - Calcular média\n3 - Gerar relatório\n4 - Sair\nSua entrada: ");
             opcao = teclado.nextInt();
             switch (opcao) {
@@ -36,12 +37,17 @@ public class Program{
 
 
                     break;
+
                 case 2:
+                    
                     break;
+
                 case 3:
                     break;
+
                 case 4:
-                    opcao = false;
+                    System.out.printf("O proggrama está sendo encerrado");
+                    ver = false;
                     break;
             }
         }

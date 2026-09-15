@@ -1,7 +1,5 @@
 package main.classes;
 
-import java.util.ArrayList;
-
 public class Aluno {
 
     private String nome;
