@@ -4,13 +4,6 @@ import java.util.Scanner;
 import main.classes.*;
 
 public class Program{
-
-    public static void clearScreen() {
-        for (int i = 0; i < 50; i++) {
-            System.out.println("\n");
-        }
-    }
-
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Diario diario = new Diario();
@@ -24,22 +17,24 @@ public class Program{
             opcao = teclado.nextInt();
             switch (opcao) {
                 case 1:
-                    clearScreen();
                     System.out.println("1 - Adicionar aluno\nAntes de adicionar o aluno declare quantas notas deseja cadastrar para esse aluno.\n");
                     int quantidadeNotas = teclado.nextInt();
-                    Aluno aluno = new Aluno(quantidadeNotas);
+                    int[] notas = new int[quantidadeNotas];
                     System.out.println("Digite o nome do aluno: ");
-                    aluno.setNome(teclado.nextLine());
-                    System.out.println("Digite o nome do aluno: ");
-                    aluno.setNome(teclado.nextLine());
+                    String nome = teclado.nextLine();
                     System.out.println("Digite o RA do aluno: ");
-                    aluno.setRa(teclado.nextLine());
+                    int ra = Integer.parseInt(teclado.nextLine());
+                    for(int i=0;i<quantidadeNotas;i++){
+                        System.out.println("Digite a nota do aluno: ");
+                        notas[i] = teclado.nextInt();
+                    }
 
+                    diario.addAlunos(nome, ra, notas);
 
                     break;
 
                 case 2:
-                    
+
                     break;
 
                 case 3:

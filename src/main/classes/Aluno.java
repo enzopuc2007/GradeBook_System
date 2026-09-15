@@ -3,12 +3,14 @@ package main.classes;
 public class Aluno {
 
     private String nome;
-    private String ra;
+    private int ra;
 
     private int[] notas;
 
-    public Aluno(int quantidadeNotas) {
-        this.notas = new int[quantidadeNotas];
+    public Aluno(int[] notas, String nome, int ra) {
+        this.notas = notas;
+        setNome(nome);
+        setRa(ra);
     }
 
     public String getNome() {
@@ -19,11 +21,11 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public String getRa() {
+    public int getRa() {
         return ra;
     }
 
-    public void setRa(String ra) {
+    public void setRa(int ra) {
         this.ra = ra;
     }
 }

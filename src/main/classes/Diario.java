@@ -14,7 +14,8 @@ public class Diario {
         this.materia = materia;
     }
 
-    public void addAlunos(String nome, String ra, double nota) {
-        
+    public void addAlunos(String nome, int ra, int[] nota) {
+        Aluno aluno = new Aluno(nota,nome, ra);
+        alunos.add(aluno);
     }
 }
