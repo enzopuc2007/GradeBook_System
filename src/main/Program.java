@@ -30,7 +30,7 @@ public class Program{
                         System.out.printf("Deseja adicionar algum outro aluno?(S ou N)");
                         String adiciona = sc.next();
                         if(adiciona.equals("N")){
-                            false;
+                            break;
                         }
                     }
                     break;
