@@ -3,7 +3,7 @@ package main.classes;
 import java.util.ArrayList;
 
 public class Diario {
-    private ArrayList<Aluno> alunos;
+    private ArrayList<Aluno> alunos = new ArrayList<>();
     private String materia;
 
     public String getMateria() {
@@ -14,8 +14,34 @@ public class Diario {
         this.materia = materia;
     }
 
-    public void addAlunos(String nome, int ra, int[] nota) {
+    public void addAlunos(String nome, int ra, ArrayList<Integer> nota) {
         Aluno aluno = new Aluno(nota,nome, ra);
         alunos.add(aluno);
+    }
+
+    public void calaculaMedia(){
+    double Media=0;
+    double Soma=0;
+    
+        for(int i=0;i<alunos.size();i++){
+            for(int j=0;j<alunos.get(i).getarraynotas().size();j++){
+                Soma += alunos.get(i).getNota(j);
+            }
+            Media += Soma/alunos.get(i).getarraynotas().size();
+        }
+
+        Media /= alunos.size();
+
+        System.out.printf("A média geral da turma é: %f",Media);
+    }
+
+    public void realizaRelatorio(){
+        for(int i=0;i<alunos.size();i++){
+            System.out.printf("")
+            for(int j=0;j<alunos.get(i).getarraynotas().size();j++){
+                
+            }
+            
+        }
     }
 }
