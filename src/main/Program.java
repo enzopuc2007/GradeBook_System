@@ -54,5 +54,7 @@ public class Program{
                     break;
             }
         }
+
+        teclado.close();
     }
 }
