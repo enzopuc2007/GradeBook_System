@@ -41,7 +41,6 @@ public class Program{
                 case 3:
                     break;
                 case 4:
-                    System.exit(1);
                     break;
             }
         }
