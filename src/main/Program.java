@@ -52,6 +52,11 @@ public class Program{
                     System.out.printf("O programa está sendo encerrado");
                     ver = false;
                     break;
+                
+                default:
+                    System.out.printf("Nenhuma das opcoes foi selecionada.\nTente novamente...");
+                    System.out.println();
+                    break;
             }
         }
 
