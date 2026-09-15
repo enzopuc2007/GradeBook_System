@@ -21,9 +21,9 @@ public class Diario {
 
     public void calculaMedia(){
     double Media=0;
-    double Soma=0;
     
         for(int i=0;i<alunos.size();i++){
+            double Soma=0;
             for(int j=0;j<alunos.get(i).getarraynotas().size();j++){
                 Soma += alunos.get(i).getNota(j);
             }
@@ -50,6 +50,8 @@ public class Diario {
             double Media = Soma/alunos.get(i).getarraynotas().size();
 
             System.out.printf("Media: %f",Media);
+            System.out.println();
+            System.out.println();
         }
 
         calculaMedia();
