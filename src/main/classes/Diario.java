@@ -19,7 +19,7 @@ public class Diario {
         alunos.add(aluno);
     }
 
-    public void calaculaMedia(){
+    public void calculaMedia(){
     double Media=0;
     double Soma=0;
     
@@ -37,11 +37,21 @@ public class Diario {
 
     public void realizaRelatorio(){
         for(int i=0;i<alunos.size();i++){
-            System.out.printf("")
+            double Soma = 0; 
+            System.out.printf("Nome do aluno: " + alunos.get(i).getNome());
+            System.out.println();
+            System.out.printf("RA: " + alunos.get(i).getRa());
+            System.out.println();
             for(int j=0;j<alunos.get(i).getarraynotas().size();j++){
-                
+                System.out.printf("Nota %d: %d",j+1,alunos.get(i).getNota(j));
+                System.out.println();
+                Soma += alunos.get(i).getNota(j);
             }
-            
+            double Media = Soma/alunos.get(i).getarraynotas().size();
+
+            System.out.printf("Media: %f",Media);
         }
+
+        calculaMedia();
     }
 }

@@ -37,13 +37,14 @@ public class Program{
 
                 case 2:
                     System.out.printf("Calculo da média de cada aluno: \n");
-                    diario.calaculaMedia();
+                    diario.calculaMedia();
 
                     break;
 
                 case 3:
                     System.out.println("Relatorio geral de cada aluno\n\n");
-                    
+                    System.out.println();
+                    diario.realizaRelatorio();
 
                     break;
 
