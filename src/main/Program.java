@@ -41,6 +41,7 @@ public class Program{
                 case 3:
                     break;
                 case 4:
+                    opcao = false;
                     break;
             }
         }
