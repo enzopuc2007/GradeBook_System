@@ -23,7 +23,7 @@ public class Program{
                     teclado.nextLine();
                     ArrayList<Integer> notas = new ArrayList<>();
                     System.out.println("Digite o nome do aluno: ");
-                    String nome = teclado.nextLine();
+                        String nome = teclado.nextLine();
                     System.out.println("Digite o RA do aluno: ");
                     int ra = Integer.parseInt(teclado.nextLine());
                     for(int i=0;i<quantidadeNotas;i++){

@@ -32,7 +32,7 @@ public class Diario {
 
         Media /= alunos.size();
 
-        System.out.printf("A média geral da turma é: %f",Media);
+        System.out.printf("\nA média geral da turma é: %.2f\n",Media);
     }
 
     public void realizaRelatorio(){
@@ -62,7 +62,7 @@ public class Diario {
     }
 
     public void criaHistograma(){
-        System.out.printf("\t\tHistograma geral de todas as provas\t\t\n\n");
+        System.out.printf("\nHistograma geral de todas as provas\t\t\n\n");
         int A=0,B=0,C=0,D=0,E=0,cont=1;
 
         for(int i=0;i<alunos.size();i++){
