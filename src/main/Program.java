@@ -9,7 +9,9 @@ public class Program{
         Scanner teclado = new Scanner(System.in);
         Diario diario = new Diario();
         boolean ver = true;
+        boolean p = true;
         Integer opcao;
+
         System.out.println("Digite o nome da disciplina: ");
         diario.setMateria(teclado.nextLine());
 //        System.out.println(diario.getMateria());
@@ -19,16 +21,47 @@ public class Program{
             switch (opcao) {
                 case 1:
                     System.out.println("1 - Adicionar aluno\nAntes de adicionar o aluno declare quantas notas deseja cadastrar para esse aluno.\n");
-                    int quantidadeNotas = teclado.nextInt();
-                    teclado.nextLine();
+                    int quantidadeNotas = 0;
+                    while(p==true){
+                        try{
+                            quantidadeNotas = teclado.nextInt();
+                            p = false;
+                            teclado.nextLine();
+                        }catch(IllegalArgumentException e){
+                            System.out.println("Tente novamente...");
+                        }
+                    }
+                    p = true;
                     ArrayList<Integer> notas = new ArrayList<>();
                     System.out.println("Digite o nome do aluno: ");
-                        String nome = teclado.nextLine();
+                    String nome = null;
+                    while(p==true){
+                        try{
+                            nome = teclado.nextLine();
+                            p = false;
+                            teclado.nextLine();
+                        }catch(IllegalArgumentException e){
+                            System.out.println("Tente novamente...");
+                        }
+                    }
+                    p = true;
                     System.out.println("Digite o RA do aluno: ");
                     int ra = Integer.parseInt(teclado.nextLine());
                     for(int i=0;i<quantidadeNotas;i++){
                         System.out.println("Digite a nota do aluno: ");
                         notas.add(teclado.nextInt());
+                    }
+                    while(p==true){
+                        try{
+                            for(int i=0;i<quantidadeNotas;i++){
+                            System.out.println("Digite a nota do aluno: ");
+                            notas.add(teclado.nextInt());
+                            }
+                            p = false;
+                            teclado.nextLine();
+                        }catch(IllegalArgumentException e){
+                            System.out.println("Tente novamente...");
+                        }
                     }
 
                     diario.addAlunos(nome, ra, notas);
